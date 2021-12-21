@@ -19,7 +19,7 @@ class _HorarioState extends State<Horario> {
   Future<Map> obtenerUsuarios() async {
     var id = await FlutterSession().get('id');
     var url =
-        "http://152.173.140.177/pruebastesis/obtenerHorario.php?Usuarioid=$id";
+        "http://152.172.138.103/pruebastesis/obtenerHorario.php?Usuarioid=$id";
     final response = await http.get(Uri.parse(url));
     return json.decode(response.body);
   }

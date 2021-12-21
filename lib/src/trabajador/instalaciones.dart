@@ -21,7 +21,7 @@ class _InstalacionesState extends State<Instalaciones> {
   Future<List> obtenerInstalaciones() async {
     var id = await FlutterSession().get('id');
     var url =
-        "http://152.173.140.177/pruebastesis/obtenerInstalaciones.php?Usuarioid=$id";
+        "http://152.172.138.103/pruebastesis/obtenerInstalaciones.php?Usuarioid=$id";
     final response = await http.get(Uri.parse(url));
     return json.decode(response.body);
   }

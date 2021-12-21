@@ -114,7 +114,7 @@ class _ListaPublicacionesState extends State<ListaPublicaciones> {
                               : FadeInImage(
                                   fit: BoxFit.fitWidth,
                                   image: NetworkImage(
-                                      "http://152.173.140.177/lefufuapp/public/uploads/publicaciones/$imagen"),
+                                      "http://152.172.138.103/lefufuapp/public/uploads/publicaciones/$imagen"),
                                   placeholder:
                                       AssetImage('assets/jar-loading.gif'),
                                 )
@@ -145,7 +145,7 @@ class _ListaPublicacionesState extends State<ListaPublicaciones> {
   Future<List> verPublicaciones() async {
     var id = await FlutterSession().get('id');
     var url =
-        "http://152.173.140.177/pruebastesis/obtenerPublicacionusuario.php?Usuario_id=$id";
+        "http://152.172.138.103/pruebastesis/obtenerPublicacionusuario.php?Usuario_id=$id";
     final response = await http.get(Uri.parse(url));
     final dataPub = jsonDecode(response.body);
     return dataPub;

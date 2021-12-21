@@ -113,7 +113,7 @@ class _EditarUsuarioState extends State<EditarUsuario> {
                                         : FadeInImage(
                                             fit: BoxFit.fitWidth,
                                             image: NetworkImage(
-                                                "http://152.173.140.177/lefufuapp/public/uploads/trabajadores/$imagen"),
+                                                "http://152.172.138.103/lefufuapp/public/uploads/trabajadores/$imagen"),
                                             placeholder: AssetImage(
                                                 'assets/jar-loading.gif'),
                                           )
@@ -254,7 +254,7 @@ class _EditarUsuarioState extends State<EditarUsuario> {
     var id = await FlutterSession().get('id');
 
     var url =
-        "http://152.173.140.177/pruebastesis/obtenerUsuarioeditar.php?Usuario_id=$id";
+        "http://152.172.138.103/pruebastesis/obtenerUsuarioeditar.php?Usuario_id=$id";
     final response = await http.get(Uri.parse(url));
     final datausu = jsonDecode(response.body);
     return datausu;
@@ -317,7 +317,7 @@ class _EditarUsuarioState extends State<EditarUsuario> {
     var id = await FlutterSession().get('id');
 
     var url =
-        "http://152.173.140.177/pruebastesis/editarUsuario.php?Usuario_id=$id";
+        "http://152.172.138.103/pruebastesis/editarUsuario.php?Usuario_id=$id";
     await http.post(Uri.parse(url), body: {
       'Usuario_nombre': nombreuController.text,
       'Usuario_correo': correoController.text,

@@ -20,7 +20,7 @@ class _ListadoOrdenesState extends State<ListadoOrdenes> {
   Future<List> obtenerOrdenes() async {
     var id = await FlutterSession().get('id');
     var url =
-        "http://152.173.140.177/pruebastesis/obtenerOrdenes.php?Usuario_id=$id";
+        "http://152.172.138.103/pruebastesis/obtenerOrdenes.php?Usuario_id=$id";
     final response = await http.get(Uri.parse(url));
     return json.decode(response.body);
   }
@@ -90,7 +90,7 @@ class ElementoLista extends StatelessWidget {
                           ? FadeInImage(
                               fit: BoxFit.fill,
                               image: NetworkImage(
-                                  "http://152.173.140.177/lefufuapp/public/uploads/kits/$imagenprod"),
+                                  "http://152.172.138.103/lefufuapp/public/uploads/kits/$imagenprod"),
                               placeholder: AssetImage('assets/jar-loading.gif'),
                             )
                           : Image.asset(
